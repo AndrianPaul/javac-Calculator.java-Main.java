@@ -1,0 +1,85 @@
+public class Calculator {
+    // Private fields for encapsulation
+    private double num1;
+    private double num2;
+
+    // Default constructor
+    public Calculator() {
+        this.num1 = 0;
+        this.num2 = 0;
+    }
+
+    // Constructor with parameters
+    public Calculator(double num1, double num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    // Getter methods for encapsulation
+    public double getNum1() {
+        return num1;
+    }
+
+    public double getNum2() {
+        return num2;
+    }
+
+    // Setter methods to modify numbers if needed
+    public void setNum1(double num1) {
+        this.num1 = num1;
+    }
+
+    public void setNum2(double num2) {
+        this.num2 = num2;
+    }
+
+    // Method for addition
+    public double add() {
+        return num1 + num2;
+    }
+
+    // Method for subtraction
+    public double subtract() {
+        return num1 - num2;
+    }
+
+    // Method for multiplication
+    public double multiply() {
+        return num1 * num2;
+    }
+
+    // Method for division
+    public double divide() {
+        if (num2 != 0) {
+            return num1 / num2;
+        } else {
+            System.out.println("Division by zero is not allowed.");
+            return 0;
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // Creating a Calculator object using the default constructor
+        Calculator calculator1 = new Calculator();
+
+        // Setting values for num1 and num2
+        calculator1.setNum1(10);
+        calculator1.setNum2(5);
+
+        // Performing calculations
+        System.out.println("Addition: " + calculator1.add());
+        System.out.println("Subtraction: " + calculator1.subtract());
+        System.out.println("Multiplication: " + calculator1.multiply());
+        System.out.println("Division: " + calculator1.divide());
+
+        // Creating a Calculator object using the parameterized constructor
+        Calculator calculator2 = new Calculator(20, 4);
+
+        // Performing calculations
+        System.out.println("\nUsing parameterized constructor:");
+        System.out.println("Addition: " + calculator2.add());
+        System.out.println("Subtraction: " + calculator2.subtract());
+        System.out.println("Multiplication: " + calculator2.multiply());
+        System.out.println("Division: " + calculator2.divide());
+    }
